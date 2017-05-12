@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Consumer:</strong>
+  <%= @waterbill.consumer %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @waterbill.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @waterbill.year %>
+</p>
+
+<p>
+  <strong>Consumption:</strong>
+  <%= @waterbill.consumption %>
+</p>
+
+<%= link_to 'Edit', edit_waterbill_path(@waterbill) %> |
+<%= link_to 'Back', waterbills_path %>

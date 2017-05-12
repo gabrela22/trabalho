@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consumer: MyString
+  month: 1
+  year: 1
+  consumption: 1.5
+
+two:
+  consumer: MyString
+  month: 1
+  year: 1
+  consumption: 1.5

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Waterbills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Consumer</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Consumption</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @waterbills.each do |waterbill| %>
+      <tr>
+        <td><%= waterbill.consumer %></td>
+        <td><%= waterbill.month %></td>
+        <td><%= waterbill.year %></td>
+        <td><%= waterbill.consumption %></td>
+        <td><%= link_to 'Show', waterbill %></td>
+        <td><%= link_to 'Edit', edit_waterbill_path(waterbill) %></td>
+        <td><%= link_to 'Destroy', waterbill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Waterbill', new_waterbill_path %>
