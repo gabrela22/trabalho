@@ -9,6 +9,8 @@
       <th>Month</th>
       <th>Year</th>
       <th>Consumption</th>
+      <th>Custo-mensal</th>
+      <th>Label</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +22,14 @@
         <td><%= waterbill.month %></td>
         <td><%= waterbill.year %></td>
         <td><%= waterbill.consumption %></td>
+        <td><% if waterbill.consumption <= 10 %><% end %></td>
+        <td><% if waterbill.consumption >= 11 && waterbill.consumption <= 30 %><%= waterbill.consumption*1 %><%end %></td>
+        <td><% if waterbill.consumption >= 31 && waterbill.consumption <= 100 %><%= waterbill.consumption*2 %><%end %></td>
+        <td><% if waterbill.consumption <= 101 %><%= waterbill.consumption*5 %><%end %></td>
+
+        <td><% if waterbill.consumption < 10 %><%= "normal" %><% end %></td>
+        <td><% if waterbill.consumption >= 10 && waterbill.consumption <= 30 %><%= "overuse" %><%end %></td>
+        <td><% if waterbill.consumption >= 31 %><%= "excessive" %><%end %></td>
         <td><%= link_to 'Show', waterbill %></td>
         <td><%= link_to 'Edit', edit_waterbill_path(waterbill) %></td>
         <td><%= link_to 'Destroy', waterbill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
